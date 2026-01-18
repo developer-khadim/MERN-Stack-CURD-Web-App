@@ -1,6 +1,36 @@
 import React from 'react';
+import { Github, Linkedin, Globe, Menu, X, Mail } from 'lucide-react';
+
 
 const Footer = () => {
+
+
+     const socialLinks = [
+            {
+                name:'Email',
+                url: 'mailto:khadimalisoomro33@gmail.com',
+                icon: <Mail className="w-5 h-5" />,
+            },
+            {
+                name: 'GitHub',
+                url: 'https://github.com/developer-khadim',
+                icon: <Github className="w-5 h-5" />,
+            },
+            {
+                name: 'LinkedIn',
+                url: 'https://linkedin.com/in/khadim-ali12',
+                icon: <Linkedin className="w-5 h-5" />,
+            },
+            {
+                name: 'Portfolio',
+                url: 'https://khadimali-devx1.vercel.app/',
+                icon: <Globe className="w-5 h-5" />,
+            },
+           
+        ];
+
+
+
     return (
         <footer className="bg-white border-t border-gray-100 mt-auto">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -60,19 +90,12 @@ const Footer = () => {
                         © {new Date().getFullYear()} <a href="/" className="hover:underline">CURD App™</a>. All Rights Reserved.
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
-                        {/* Social Icons (Simplified for Footer) */}
-                        <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
-                            <span className="sr-only">Facebook</span>
-                            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-                                <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd" />
-                            </svg>
+                        {/* Social Icons */}
+                      {socialLinks.map((link) => (
+                        <a href={link.url} key={link.name} className="text-gray-400 hover:text-gray-900 transition-colors">
+                            {link.icon}
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-gray-900 transition-colors">
-                            <span className="sr-only">Twitter</span>
-                            <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
-                                <path fillRule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 15.284a11.849 11.849 0 0 0 6.29 1.843c7.547 0 11.675-6.252 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 20 1.892Z" clipRule="evenodd" />
-                            </svg>
-                        </a>
+                      ))}
                     </div>
                 </div>
             </div>
